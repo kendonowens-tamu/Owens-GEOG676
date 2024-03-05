@@ -105,4 +105,5 @@ class GarageBuffer(object):
         arcpy.Buffer_analysis(GDB + "/Garage_Points_Projection", garage_buffer, user_input+" Meters")
         arcpy.Intersect_analysis([garage_buffer, buildings], GDB + "/Intersect", "ALL")
         arcpy.TableToTable_conversion(GDB+"/Intersect",GDB,parameters[4].valueAsText+".csv")
+        
         return
